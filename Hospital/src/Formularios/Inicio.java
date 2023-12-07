@@ -17,6 +17,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
         Usuarios.crearUsuarios();
+        setLocationRelativeTo(null);
         
     }
     private void iniciarSesion() {

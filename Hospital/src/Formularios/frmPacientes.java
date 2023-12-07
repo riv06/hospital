@@ -25,6 +25,11 @@ public class frmPacientes extends javax.swing.JFrame {
         btnDarAlta.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnDarAlta.setText("Dar de alta al paciente");
         btnDarAlta.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnDarAlta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDarAltaActionPerformed(evt);
+            }
+        });
 
         btnPacientes.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnPacientes.setText("Pacientes");
@@ -70,6 +75,13 @@ public class frmPacientes extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnDarAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDarAltaActionPerformed
+        // TODO add your handling code here:
+        FrmFormulario p=new FrmFormulario();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnDarAltaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDarAlta;
