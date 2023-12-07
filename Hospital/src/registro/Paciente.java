@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author AA
  */
 public class Paciente {
-    private  String Nombre;
+    public String Nombre;
     private int Edad;
     private String Padecimiento;
     private String Observaciones;
