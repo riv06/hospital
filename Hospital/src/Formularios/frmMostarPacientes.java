@@ -1,10 +1,39 @@
 package Formularios;
 
+import java.util.List;
+import javax.swing.DefaultListModel;
+import registro.Guardar;
+import registro.Paciente;
 
 public class frmMostarPacientes extends javax.swing.JFrame {
 
+    Guardar pacientGuardar;
+    DefaultListModel modeloLista;
+
     public frmMostarPacientes() {
-        initComponents();
+         initComponents();
+        pacientGuardar = new Guardar();
+        pacientGuardar.cargarDesdeArchivo("datos.dat");
+        modeloLista = new DefaultListModel();
+        lstListaPacientes.setModel(modeloLista);
+        mostrarPacientesEnLista();
+    }
+
+    private void mostrarPacientesEnLista() {
+        modeloLista.clear();
+        
+        if (pacientGuardar == null) {
+            pacientGuardar = new Guardar();
+            pacientGuardar.cargarDesdeArchivo("datos.dat");
+        }
+
+        List<Paciente> pacientes = pacientGuardar.obtenerListaPacientes();
+
+        for (Paciente paciente : pacientes) {
+            modeloLista.addElement(paciente.toString());
+        }
+
+        lstListaPacientes.setModel(modeloLista);
     }
 
     /**
@@ -103,7 +132,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-        frmPacientes p= new frmPacientes();
+        frmPacientes p = new frmPacientes();
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed

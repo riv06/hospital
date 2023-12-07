@@ -122,4 +122,8 @@ public class Guardar implements Serializable{
             e.printStackTrace();
         }
     }
+    
+    public List<Paciente> obtenerListaPacientes() {
+        return guardar;
+    }
 }
