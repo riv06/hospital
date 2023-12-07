@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package registro;
 
-import java.util.ArrayList;
+import java.io.Serializable;
 
-/**
- *
- * @author AA
- */
-public class Paciente {
+
+public class Paciente implements Serializable{
+    private static final long serialVersionUID = 1L;
     public String Nombre;
     private int Edad;
     private String Padecimiento;

@@ -7,7 +7,8 @@ import javax.swing.JOptionPane;
 import registro.*;
 
 public class FrmFormulario extends javax.swing.JFrame {
-
+    
+    private static final String pacientes = "datos.dat";
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
 
@@ -15,8 +16,10 @@ public class FrmFormulario extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         pacientGuardar = new Guardar();
+        pacientGuardar.cargarDesdeArchivo(pacientes);
         modeloLista = new DefaultListModel();
         LstUbicasion.setModel(modeloLista);
+        ordenarYActualizarLista();
     }
     private void ordenarYActualizarLista() {
     pacientGuardar.ordenarPorEdad();
@@ -51,6 +54,11 @@ public class FrmFormulario extends javax.swing.JFrame {
         btnOrdenarEdad = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jLabel1.setText("Nombre");
 
@@ -215,6 +223,8 @@ public class FrmFormulario extends javax.swing.JFrame {
         txtArea.setText(pacientGuardar.motrar());
         pacientGuardar.NumHabita(Nombre);
         modeloLista.addElement(pacientGuardar.comprobar(Nombre));
+        pacientGuardar.guardarEnArchivo(pacientes);
+        JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
         txtNombre.setText("");
         txtEdad.setText("");
         txtPadecimiento.setText("");
@@ -254,6 +264,13 @@ public class FrmFormulario extends javax.swing.JFrame {
         // TODO add your handling code here:
         ordenarYActualizarLista();
     }//GEN-LAST:event_btnOrdenarEdadActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        pacientGuardar.guardarEnArchivo(pacientes);
+        JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
+    this.dispose();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments

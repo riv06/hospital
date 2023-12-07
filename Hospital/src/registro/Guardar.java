@@ -1,5 +1,12 @@
 package registro;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -7,7 +14,10 @@ import java.util.List;
 import javax.print.DocFlavor;
 import javax.swing.JOptionPane;
 
-public class Guardar {
+public class Guardar implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
+    private static final String pacientes = "datos.dat";
 
     List<Paciente> guardar = new ArrayList<>();
     public List<Integer> darHabitacion = new ArrayList<>();
@@ -79,7 +89,37 @@ public class Guardar {
             return bucarEnfermo(nombre, index + 1);
         }
     }
+
     public void ordenarPorEdad() {
         guardar.sort(Comparator.comparingInt(Paciente::getEdad));
+    }
+
+    public void guardarEnArchivo(String nombreArchivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
+            oos.writeObject(guardar);
+            System.out.println("Datos guardados en el archivo.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    public void cargarDesdeArchivo(String nombreArchivo) {
+         try {
+            File archivo = new File(pacientes);
+
+            if (!archivo.exists()) {
+                // Si el archivo no existe, crearlo
+                archivo.createNewFile();
+                System.out.println("Se creó el archivo " + pacientes);
+            }
+
+            try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(archivo))) {
+                guardar = (List<Paciente>) ois.readObject();
+                System.out.println("Datos cargados desde el archivo.");
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
