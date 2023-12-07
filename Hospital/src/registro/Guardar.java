@@ -73,25 +73,13 @@ public class Guardar {
         Paciente paciente = guardar.get(index);
         if (paciente.Nombre.equals(nombre)) {
             JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + index + "º en ser registrado",
-                     "Infirmacion", JOptionPane.INFORMATION_MESSAGE);
+                    "Infirmacion", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } else {
             return bucarEnfermo(nombre, index + 1);
         }
     }
-
-    /*public void ordenarPorEdad() {
-        // Utilizamos un Comparator para comparar por la edad de los pacientes
-        Collections.sort(guardar, new Comparator<Paciente>() {
-            @Override
-            public int compare(Paciente p1, Paciente p2) {
-                return Integer.compare(p1.getEdad(), p2.getEdad());
-            }
-        });
-
-    }*/
     public void ordenarPorEdad() {
-    // Utilizamos un Comparator para comparar por la edad de los pacientes
-    guardar.sort(Comparator.comparingInt(Paciente::getEdad));
-}
+        guardar.sort(Comparator.comparingInt(Paciente::getEdad));
+    }
 }
