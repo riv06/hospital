@@ -34,6 +34,11 @@ public class frmPacientes extends javax.swing.JFrame {
         btnPacientes.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnPacientes.setText("Pacientes");
         btnPacientes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnPacientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPacientesActionPerformed(evt);
+            }
+        });
 
         btnMostraSala.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnMostraSala.setText("MostrarSala");
@@ -82,6 +87,13 @@ public class frmPacientes extends javax.swing.JFrame {
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnDarAltaActionPerformed
+
+    private void btnPacientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacientesActionPerformed
+        // TODO add your handling code here:
+        frmMostarPacientes p = new frmMostarPacientes();
+        p.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnPacientesActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDarAlta;
