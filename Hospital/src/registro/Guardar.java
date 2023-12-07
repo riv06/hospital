@@ -1,27 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package registro;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javax.print.DocFlavor;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author AA
- */
 public class Guardar {
 
-    List<Paciente> guardar= new ArrayList<>();
-    public List<Integer> darHabitacion= new ArrayList<>();
-    
-    public void inserta(String n, int e, String p ,String o) {
+    List<Paciente> guardar = new ArrayList<>();
+    public List<Integer> darHabitacion = new ArrayList<>();
+
+    public void inserta(String n, int e, String p, String o) {
         Paciente paciente = new Paciente(n, e, p, o);
         guardar.add(paciente);
     }
+
     public String motrar() {
         String salida = "";
         for (Paciente paciente : guardar) {
@@ -29,7 +24,8 @@ public class Guardar {
         }
         return salida;
     }
-    public  int NumHabita(String n) {
+
+    public int NumHabita(String n) {
         if (n.length() > 0) {
 
             int a = (int) (Math.random() * 10);
@@ -47,18 +43,18 @@ public class Guardar {
         }
     }
 
-    public boolean A(int o){
-        if (o>0) {
-            for (int i = 0; i <darHabitacion.size(); i++) {
-                if (darHabitacion.get(i)== 0) {
+    public boolean A(int o) {
+        if (o > 0) {
+            for (int i = 0; i < darHabitacion.size(); i++) {
+                if (darHabitacion.get(i) == 0) {
                 }
             }
         }
         return true;
-}
+    }
 
-    public String comprobar(String n){
-        if (n.length()>0) {
+    public String comprobar(String n) {
+        if (n.length() > 0) {
             int a = 0;
             for (int tem : darHabitacion) {
                 a += tem;
@@ -68,20 +64,34 @@ public class Guardar {
             return "Ocurrio un error";
         }
     }
-    public  boolean bucarEnfermo(String nombre, int index){
-        index=0;
-        if (index>= guardar.size()) {
+
+    public boolean bucarEnfermo(String nombre, int index) {
+        index = 0;
+        if (index >= guardar.size()) {
             return false;
         }
-        Paciente paciente= guardar.get(index);
+        Paciente paciente = guardar.get(index);
         if (paciente.Nombre.equals(nombre)) {
-            JOptionPane.showMessageDialog(null, "Paciente " +nombre +" fue " +index+"º en ser registrado"
-                    ,"Infirmacion", JOptionPane.INFORMATION_MESSAGE);
-          return true;
-        } else{
-           return bucarEnfermo(nombre, index+1);}
-}
-    
-}
+            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + index + "º en ser registrado",
+                     "Infirmacion", JOptionPane.INFORMATION_MESSAGE);
+            return true;
+        } else {
+            return bucarEnfermo(nombre, index + 1);
+        }
+    }
 
+    /*public void ordenarPorEdad() {
+        // Utilizamos un Comparator para comparar por la edad de los pacientes
+        Collections.sort(guardar, new Comparator<Paciente>() {
+            @Override
+            public int compare(Paciente p1, Paciente p2) {
+                return Integer.compare(p1.getEdad(), p2.getEdad());
+            }
+        });
 
+    }*/
+    public void ordenarPorEdad() {
+    // Utilizamos un Comparator para comparar por la edad de los pacientes
+    guardar.sort(Comparator.comparingInt(Paciente::getEdad));
+}
+}
