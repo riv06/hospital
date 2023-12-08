@@ -1,7 +1,11 @@
 package Formularios;
 
+import java.awt.Image;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import registro.Guardar;
 import registro.Paciente;
 
@@ -9,8 +13,15 @@ public class frmMostarPacientes extends javax.swing.JFrame {
 
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
+    
+    private ImageIcon imagen;
+    private Icon icono;
 
     public frmMostarPacientes() {
+        
+        /* this.setLocationRelativeTo(this);
+        this.pintarImagen(this.lblImagen1, "src/Formularios/icon23.jpg");*/
+        
          initComponents();
         pacientGuardar = new Guardar();
         pacientGuardar.cargarDesdeArchivo("datos.dat");
@@ -137,6 +148,19 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
+    
+    private void pintarImagen(JLabel lbl, String ruta){
+ this.imagen = new ImageIcon(ruta);
+ this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
+         lbl.getWidth(), 
+         lbl.getHeight(),
+         Image.SCALE_DEFAULT
+ )
+ );lbl.setIcon(this.icono);
+ this.repaint();
+ 
+}  
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegresar;

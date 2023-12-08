@@ -1,8 +1,12 @@
 package Formularios;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import registro.*;
 
@@ -11,9 +15,19 @@ public class FrmFormulario extends javax.swing.JFrame {
     private static final String pacientes = "datos.dat";
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
-
+    
+ private ImageIcon imagen;
+    private Icon icono;
+    
+        
+      
     public FrmFormulario() {
         initComponents();
+        
+        /* this.setLocationRelativeTo(this);
+        this.pintarImagen(this.lblImagen1, "src/Formularios/icon23.jpg");*/
+        
+        
         setLocationRelativeTo(null);
         pacientGuardar = new Guardar();
         pacientGuardar.cargarDesdeArchivo(pacientes);
@@ -272,6 +286,19 @@ public class FrmFormulario extends javax.swing.JFrame {
     this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
+    
+    
+    private void pintarImagen(JLabel lbl, String ruta){
+ this.imagen = new ImageIcon(ruta);
+ this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
+         lbl.getWidth(), 
+         lbl.getHeight(),
+         Image.SCALE_DEFAULT
+ )
+ );lbl.setIcon(this.icono);
+ this.repaint();
+ 
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> LstUbicasion;
