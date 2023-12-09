@@ -11,23 +11,19 @@ import javax.swing.JOptionPane;
 import registro.*;
 
 public class FrmFormulario extends javax.swing.JFrame {
-    
+
     private static final String pacientes = "datos.dat";
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
-    
- private ImageIcon imagen;
+
+    private ImageIcon imagen;
     private Icon icono;
-    
-        
-      
+
     public FrmFormulario() {
         initComponents();
-        
+
         /* this.setLocationRelativeTo(this);
         this.pintarImagen(this.lblImagen1, "src/Formularios/icon23.jpg");*/
-        
-        
         setLocationRelativeTo(null);
         pacientGuardar = new Guardar();
         pacientGuardar.cargarDesdeArchivo(pacientes);
@@ -35,10 +31,11 @@ public class FrmFormulario extends javax.swing.JFrame {
         LstUbicasion.setModel(modeloLista);
         ordenarYActualizarLista();
     }
+
     private void ordenarYActualizarLista() {
-    pacientGuardar.ordenarPorEdad();
-    txtArea.setText(pacientGuardar.motrar());
-}
+        pacientGuardar.ordenarPorEdad();
+        txtArea.setText(pacientGuardar.motrar());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -228,24 +225,30 @@ public class FrmFormulario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
         String Nombre = txtNombre.getText();
-        int Edad = Integer.parseInt(txtEdad.getText());
         String Padecimiento = txtPadecimiento.getText();
         String Observaciones = txtObservaciones.getText();
-        pacientGuardar.inserta(Nombre, Edad, Padecimiento, Observaciones);
-        txtArea.setText(pacientGuardar.motrar());
-        pacientGuardar.NumHabita(Nombre);
-        modeloLista.addElement(pacientGuardar.comprobar(Nombre));
-        pacientGuardar.guardarEnArchivo(pacientes);
-        JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
-        txtNombre.setText("");
-        txtEdad.setText("");
-        txtPadecimiento.setText("");
-        txtObservaciones.setText("");
-        txtNombre.requestFocus();
 
+        try {
 
+            int Edad = Integer.parseInt(txtEdad.getText());
+
+            pacientGuardar.inserta(Nombre, Edad, Padecimiento, Observaciones);
+            txtArea.setText(pacientGuardar.motrar());
+            pacientGuardar.NumHabita(Nombre);
+            modeloLista.addElement(pacientGuardar.comprobar(Nombre));
+            pacientGuardar.guardarEnArchivo(pacientes);
+            JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            txtNombre.setText("");
+            txtEdad.setText("");
+            txtPadecimiento.setText("");
+            txtObservaciones.setText("");
+            txtNombre.requestFocus();
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Datos Invalidos", "Error", JOptionPane.ERROR_MESSAGE);
+            txtEdad.setText("");
+            txtEdad.requestFocus();
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
@@ -283,22 +286,21 @@ public class FrmFormulario extends javax.swing.JFrame {
         // TODO add your handling code here:
         pacientGuardar.guardarEnArchivo(pacientes);
         JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_formWindowClosing
 
-    
-    
-    private void pintarImagen(JLabel lbl, String ruta){
- this.imagen = new ImageIcon(ruta);
- this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
-         lbl.getWidth(), 
-         lbl.getHeight(),
-         Image.SCALE_DEFAULT
- )
- );lbl.setIcon(this.icono);
- this.repaint();
- 
-}
+    private void pintarImagen(JLabel lbl, String ruta) {
+        this.imagen = new ImageIcon(ruta);
+        this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
+                lbl.getWidth(),
+                lbl.getHeight(),
+                Image.SCALE_DEFAULT
+        )
+        );
+        lbl.setIcon(this.icono);
+        this.repaint();
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> LstUbicasion;
