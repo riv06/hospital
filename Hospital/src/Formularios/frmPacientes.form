@@ -28,17 +28,14 @@
                   <Component id="jPanel2" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel4" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel5" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="377" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jPanel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnPacientes" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                  <Component id="btnDarAlta" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMostraSala" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
-                  <Component id="jPanel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="jPanel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnPacientes" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
+                      <Component id="btnDarAlta" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnMostraSala" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
+                      <Component id="jPanel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -123,6 +120,9 @@
           </Border>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostraSalaActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>

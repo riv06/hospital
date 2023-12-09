@@ -56,12 +56,13 @@ public class frmSalaPacientes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblAreaAPaciente.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        lblAreaAPaciente.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         lblAreaAPaciente.setText("Area Paciente");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 153, 153));
         jButton1.setText("Regresar");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -194,6 +195,10 @@ public class frmSalaPacientes extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        frmPacientes p = new frmPacientes();
+        p.setVisible(true);
+        p.setLocationRelativeTo(null);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     

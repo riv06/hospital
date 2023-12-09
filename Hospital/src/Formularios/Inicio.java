@@ -99,7 +99,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setForeground(new java.awt.Color(0, 102, 102));
 
-        jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(28, 110, 110));
         jLabel2.setText("Usuario");
 
@@ -134,7 +134,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(18, 118, 118));
         jLabel1.setText("Contraseña");
 
@@ -158,7 +158,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnIniciar.setFont(new java.awt.Font("Roboto", 3, 18)); // NOI18N
+        btnIniciar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnIniciar.setForeground(new java.awt.Color(51, 153, 255));
         btnIniciar.setText("Iniciar sesion");
         btnIniciar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));

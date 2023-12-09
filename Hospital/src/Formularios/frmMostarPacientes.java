@@ -82,7 +82,8 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstListaPacientes);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Lista de pacientes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -101,48 +102,64 @@ public class frmMostarPacientes extends javax.swing.JFrame {
                 .addGap(0, 18, Short.MAX_VALUE))
         );
 
-        btnEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnEliminar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(0, 153, 153));
         btnEliminar.setText("Eliminar");
-        btnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
 
-        btnRegresar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnRegresar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(0, 153, 153));
         btnRegresar.setText("Regresar");
-        btnRegresar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnRegresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
             }
         });
 
+        btnAgregar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnAgregar.setForeground(new java.awt.Color(0, 153, 153));
         btnAgregar.setText("Agregar Paciente");
+        btnAgregar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("Buscar:");
 
+        btnBuscar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(0, 153, 153));
         btnBuscar.setText("Buscar");
+        btnBuscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
 
+        btnOrdenar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnOrdenar.setForeground(new java.awt.Color(0, 153, 153));
         btnOrdenar.setText("Ordenar por Edad");
+        btnOrdenar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarActionPerformed(evt);
             }
         });
 
+        btnOrdenarNombre.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        btnOrdenarNombre.setForeground(new java.awt.Color(0, 153, 153));
         btnOrdenarNombre.setText("Ordenar por Nombre");
+        btnOrdenarNombre.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrdenarNombreActionPerformed(evt);
@@ -158,7 +175,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(9, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnAgregar)
@@ -172,7 +189,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
                         .addGap(134, 134, 134))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -192,7 +209,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
                     .addComponent(btnRegresar))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
