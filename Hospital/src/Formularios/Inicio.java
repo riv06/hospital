@@ -26,6 +26,7 @@ public class Inicio extends javax.swing.JFrame {
         
        this.setLocationRelativeTo(this);
         this.pintarImagen(this.lblImagen1, "src/Formularios/hacker.png");
+        this.pintarImagen(this.lblImagPanel, "src/Formularios/part4.jpg");
         
         Usuarios.crearUsuarios();
         setLocationRelativeTo(null);
@@ -79,6 +80,16 @@ public class Inicio extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnIniciar = new javax.swing.JButton();
         lblImagen1 = new javax.swing.JLabel();
+        lblPanelColor = new javax.swing.JPanel();
+        lblImagPanel = new javax.swing.JLabel();
+        lblPanelColor1 = new javax.swing.JPanel();
+        lblPanelColor2 = new javax.swing.JPanel();
+        lblPanelColor3 = new javax.swing.JPanel();
+        lblPanelColor4 = new javax.swing.JPanel();
+        lblPanelColor5 = new javax.swing.JPanel();
+        lblPanelColor6 = new javax.swing.JPanel();
+        lblPanelColor7 = new javax.swing.JPanel();
+        lblPanelColor8 = new javax.swing.JPanel();
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\jose l\\Documents\\NetBeansProjects\\Hospital\\hospital\\Hospital\\src\\fondo.png")); // NOI18N
         jLabel3.setText("jLabel3");
@@ -156,38 +167,185 @@ public class Inicio extends javax.swing.JFrame {
 
         lblImagen1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        lblPanelColor.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColorLayout = new javax.swing.GroupLayout(lblPanelColor);
+        lblPanelColor.setLayout(lblPanelColorLayout);
+        lblPanelColorLayout.setHorizontalGroup(
+            lblPanelColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColorLayout.setVerticalGroup(
+            lblPanelColorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor1.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor1Layout = new javax.swing.GroupLayout(lblPanelColor1);
+        lblPanelColor1.setLayout(lblPanelColor1Layout);
+        lblPanelColor1Layout.setHorizontalGroup(
+            lblPanelColor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor1Layout.setVerticalGroup(
+            lblPanelColor1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor2.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor2Layout = new javax.swing.GroupLayout(lblPanelColor2);
+        lblPanelColor2.setLayout(lblPanelColor2Layout);
+        lblPanelColor2Layout.setHorizontalGroup(
+            lblPanelColor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor2Layout.setVerticalGroup(
+            lblPanelColor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor3.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor3Layout = new javax.swing.GroupLayout(lblPanelColor3);
+        lblPanelColor3.setLayout(lblPanelColor3Layout);
+        lblPanelColor3Layout.setHorizontalGroup(
+            lblPanelColor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor3Layout.setVerticalGroup(
+            lblPanelColor3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor4.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor4Layout = new javax.swing.GroupLayout(lblPanelColor4);
+        lblPanelColor4.setLayout(lblPanelColor4Layout);
+        lblPanelColor4Layout.setHorizontalGroup(
+            lblPanelColor4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor4Layout.setVerticalGroup(
+            lblPanelColor4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor5.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor5Layout = new javax.swing.GroupLayout(lblPanelColor5);
+        lblPanelColor5.setLayout(lblPanelColor5Layout);
+        lblPanelColor5Layout.setHorizontalGroup(
+            lblPanelColor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor5Layout.setVerticalGroup(
+            lblPanelColor5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor6.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor6Layout = new javax.swing.GroupLayout(lblPanelColor6);
+        lblPanelColor6.setLayout(lblPanelColor6Layout);
+        lblPanelColor6Layout.setHorizontalGroup(
+            lblPanelColor6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor6Layout.setVerticalGroup(
+            lblPanelColor6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor7.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor7Layout = new javax.swing.GroupLayout(lblPanelColor7);
+        lblPanelColor7.setLayout(lblPanelColor7Layout);
+        lblPanelColor7Layout.setHorizontalGroup(
+            lblPanelColor7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor7Layout.setVerticalGroup(
+            lblPanelColor7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
+        lblPanelColor8.setBackground(new java.awt.Color(0, 153, 153));
+
+        javax.swing.GroupLayout lblPanelColor8Layout = new javax.swing.GroupLayout(lblPanelColor8);
+        lblPanelColor8.setLayout(lblPanelColor8Layout);
+        lblPanelColor8Layout.setHorizontalGroup(
+            lblPanelColor8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+        lblPanelColor8Layout.setVerticalGroup(
+            lblPanelColor8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 26, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPanelColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPanelColor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(51, 51, 51)))
-                .addContainerGap(49, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77))
+                        .addGap(64, 64, 64)
+                        .addComponent(btnIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(lblImagPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblImagPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(btnIniciar)
-                .addGap(21, 21, 21))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblPanelColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPanelColor8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69)
+                        .addComponent(btnIniciar)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -247,7 +405,17 @@ private void pintarImagen(JLabel lbl, String ruta){
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblImagPanel;
     private javax.swing.JLabel lblImagen1;
+    private javax.swing.JPanel lblPanelColor;
+    private javax.swing.JPanel lblPanelColor1;
+    private javax.swing.JPanel lblPanelColor2;
+    private javax.swing.JPanel lblPanelColor3;
+    private javax.swing.JPanel lblPanelColor4;
+    private javax.swing.JPanel lblPanelColor5;
+    private javax.swing.JPanel lblPanelColor6;
+    private javax.swing.JPanel lblPanelColor7;
+    private javax.swing.JPanel lblPanelColor8;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
