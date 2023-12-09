@@ -74,15 +74,12 @@ public class Guardar implements Serializable {
     }
 
     public boolean Buscar(String nombre, int index) {
-        index = 0;
         if (index >= guardar.size()) {
-            // Se ha recorrido toda la lista y no se encontró el paciente
-            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " no encontrado",
-                    "Advertencia", JOptionPane.INFORMATION_MESSAGE);
             return false;
         }
 
         Paciente paciente = guardar.get(index);
+
         if (paciente.Nombre.equals(nombre)) {
             int tem = index + 1;
             JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + tem + "º en ser registrado",
