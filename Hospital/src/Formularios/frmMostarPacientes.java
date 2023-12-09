@@ -13,16 +13,15 @@ public class frmMostarPacientes extends javax.swing.JFrame {
 
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
-    
+
     private ImageIcon imagen;
     private Icon icono;
 
     public frmMostarPacientes() {
-        
+
         /* this.setLocationRelativeTo(this);
         this.pintarImagen(this.lblImagen1, "src/Formularios/icon23.jpg");*/
-        
-         initComponents();
+        initComponents();
         pacientGuardar = new Guardar();
         pacientGuardar.cargarDesdeArchivo("datos.dat");
         modeloLista = new DefaultListModel();
@@ -32,7 +31,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
 
     private void mostrarPacientesEnLista() {
         modeloLista.clear();
-        
+
         if (pacientGuardar == null) {
             pacientGuardar = new Guardar();
             pacientGuardar.cargarDesdeArchivo("datos.dat");
@@ -95,6 +94,11 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnRegresar.setText("Regresar");
@@ -148,19 +152,40 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
-    
-    private void pintarImagen(JLabel lbl, String ruta){
- this.imagen = new ImageIcon(ruta);
- this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
-         lbl.getWidth(), 
-         lbl.getHeight(),
-         Image.SCALE_DEFAULT
- )
- );lbl.setIcon(this.icono);
- this.repaint();
- 
-}  
-    
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = lstListaPacientes.getSelectedIndex();
+
+        if (selectedIndex != -1) {
+            Object pacienteString = modeloLista.getElementAt(selectedIndex);
+            modeloLista.remove(selectedIndex);
+
+            List<Paciente> pacientes = pacientGuardar.obtenerListaPacientes();
+
+            for (Paciente paciente : pacientes) {
+                if (paciente.toString().equals(pacienteString)) {
+                    pacientes.remove(paciente);
+                    break;
+                }
+            }
+
+            pacientGuardar.guardarEnArchivo("datos.dat");
+        }
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void pintarImagen(JLabel lbl, String ruta) {
+        this.imagen = new ImageIcon(ruta);
+        this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
+                lbl.getWidth(),
+                lbl.getHeight(),
+                Image.SCALE_DEFAULT
+        )
+        );
+        lbl.setIcon(this.icono);
+        this.repaint();
+
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegresar;
