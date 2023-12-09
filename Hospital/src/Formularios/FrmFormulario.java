@@ -15,6 +15,7 @@ public class FrmFormulario extends javax.swing.JFrame {
     private static final String pacientes = "datos.dat";
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
+    ColaPaciente Cola;
 
     private ImageIcon imagen;
     private Icon icono;
@@ -27,6 +28,7 @@ public class FrmFormulario extends javax.swing.JFrame {
         pacientGuardar.cargarDesdeArchivo(pacientes);
         modeloLista = new DefaultListModel();
         LstUbicasion.setModel(modeloLista);
+        Cola = new ColaPaciente();
         //ordenarYActualizarLista();
     }
 
@@ -56,6 +58,9 @@ public class FrmFormulario extends javax.swing.JFrame {
         LstUbicasion = new javax.swing.JList<>();
         btnRegresar = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCola = new javax.swing.JTextArea();
+        btnConsulta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -101,6 +106,17 @@ public class FrmFormulario extends javax.swing.JFrame {
             }
         });
 
+        txtCola.setColumns(20);
+        txtCola.setRows(5);
+        jScrollPane1.setViewportView(txtCola);
+
+        btnConsulta.setText("Quitar de espera");
+        btnConsulta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -132,18 +148,20 @@ public class FrmFormulario extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(14, 14, 14)
-                        .addComponent(btnRegresar)))
+                        .addComponent(btnRegresar))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnConsulta)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
-                .addGap(11, 11, 11))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(37, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(btnRegresar)
@@ -166,9 +184,19 @@ public class FrmFormulario extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnLimpiar)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnConsulta)
+                        .addGap(52, 52, 52))))
         );
 
         pack();
@@ -194,6 +222,11 @@ public class FrmFormulario extends javax.swing.JFrame {
             modeloLista.addElement(pacientGuardar.comprobar(Nombre));
             pacientGuardar.guardarEnArchivo(pacientes);
             JOptionPane.showMessageDialog(this, "Datos guardados correctamente.", "Información", JOptionPane.INFORMATION_MESSAGE);
+            Paciente a;
+            a = new Paciente(Nombre, Edad, Padecimiento, Observaciones);
+            Cola.insertar(a);
+            JOptionPane.showMessageDialog(null, "Paciente en espera...");
+            txtCola.setText((String) Cola.mostrar());
             txtNombre.setText("");
             txtEdad.setText("");
             txtPadecimiento.setText("");
@@ -229,6 +262,23 @@ public class FrmFormulario extends javax.swing.JFrame {
         txtObservaciones.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaActionPerformed
+       // TODO add your handling code here:
+        if(Cola.esVacia()){
+            JOptionPane.showMessageDialog(null,
+               "No hay Paciente en espera","Atención",
+               JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            Paciente a = (Paciente) Cola.quitar();
+            JOptionPane.showMessageDialog(null,
+               a,"Atendido",
+               JOptionPane.WARNING_MESSAGE);
+            txtCola.setText((String) Cola.mostrar());
+        }
+
+    }//GEN-LAST:event_btnConsultaActionPerformed
+
     private void pintarImagen(JLabel lbl, String ruta) {
         this.imagen = new ImageIcon(ruta);
         this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
@@ -244,6 +294,7 @@ public class FrmFormulario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JList<String> LstUbicasion;
+    private javax.swing.JButton btnConsulta;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JButton jButton1;
@@ -251,7 +302,9 @@ public class FrmFormulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea txtCola;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtObservaciones;
