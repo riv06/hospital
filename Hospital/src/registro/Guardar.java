@@ -8,14 +8,12 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import javax.print.DocFlavor;
 import javax.swing.JOptionPane;
 
-public class Guardar implements Serializable{
-    
+public class Guardar implements Serializable {
+
     private static final long serialVersionUID = 1L;
     private static final String pacientes = "datos.dat";
 
@@ -35,15 +33,15 @@ public class Guardar implements Serializable{
         return salida;
     }
 
-    public int NumHabita(String n) {
+    public int NumeroHabitacion(String n) {
         if (n.length() > 0) {
 
             int a = (int) (Math.random() * 10);
             if (a == 0) {
-                return NumHabita(n);
+                return NumeroHabitacion(n);
             }
             if (!A(a)) {
-                return NumHabita(n);
+                return NumeroHabitacion(n);
             } else {
                 darHabitacion.add(a);
             }
@@ -75,23 +73,32 @@ public class Guardar implements Serializable{
         }
     }
 
-    public boolean bucarEnfermo(String nombre, int index) {
+    public boolean Buscar(String nombre, int index) {
         index = 0;
         if (index >= guardar.size()) {
+            // Se ha recorrido toda la lista y no se encontró el paciente
+            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " no encontrado",
+                    "Advertencia", JOptionPane.INFORMATION_MESSAGE);
             return false;
         }
+
         Paciente paciente = guardar.get(index);
         if (paciente.Nombre.equals(nombre)) {
-            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + index + "º en ser registrado",
-                    "Infirmacion", JOptionPane.INFORMATION_MESSAGE);
+            int tem = index + 1;
+            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + tem + "º en ser registrado",
+                    "Atencion", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } else {
-            return bucarEnfermo(nombre, index + 1);
+            return Buscar(nombre, index + 1);
         }
     }
 
-    public void ordenarPorEdad() {
+    public void ordenarEdad() {
         guardar.sort(Comparator.comparingInt(Paciente::getEdad));
+    }
+
+    public void ordenarNombre() {
+        guardar.sort(Comparator.comparing(Paciente::getNombre));
     }
 
     public void guardarEnArchivo(String nombreArchivo) {
@@ -105,7 +112,7 @@ public class Guardar implements Serializable{
 
     @SuppressWarnings("unchecked")
     public void cargarDesdeArchivo(String nombreArchivo) {
-         try {
+        try {
             File archivo = new File(pacientes);
 
             if (!archivo.exists()) {
@@ -122,7 +129,7 @@ public class Guardar implements Serializable{
             e.printStackTrace();
         }
     }
-    
+
     public List<Paciente> obtenerListaPacientes() {
         return guardar;
     }

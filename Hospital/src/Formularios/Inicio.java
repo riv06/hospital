@@ -48,7 +48,8 @@ public class Inicio extends javax.swing.JFrame {
             if (usuario.equals(u.getNombre()) && password.equals(u.getPassword())) {
                 Usuarios.usuarioActual = u;
                 //Inserte Nomre de formulario = new frmInicio;///Comprobar nombre
-                frmSalaPacientes principal = new frmSalaPacientes(); 
+                frmSalaPacientes principal = new frmSalaPacientes();
+                principal.setLocationRelativeTo(null);
                 encontrado = true;
                 break;
             } 

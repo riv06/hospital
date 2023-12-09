@@ -52,8 +52,7 @@ public class Paciente implements Serializable{
 
     @Override
     public String toString() {
-        return  "Nombre: " + getNombre()+ "\nEdad: "+ getEdad() + "\nPadecimiento: "+
-            getPadecimiento() + "\nObservaciones: "+ getObservaciones()+"\n----------------------\n";
+     return "--Nombre: " + Nombre + "--Edad: " + Edad + "--Padecimiento: " + Padecimiento + "--Observaciones: " + Observaciones;
     }
     
 }

@@ -95,6 +95,7 @@ public class frmPacientes extends javax.swing.JFrame {
     private void btnDarAltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDarAltaActionPerformed
         // TODO add your handling code here:
         FrmFormulario p=new FrmFormulario();
+        p.setLocationRelativeTo(null);
         p.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnDarAltaActionPerformed
@@ -103,6 +104,7 @@ public class frmPacientes extends javax.swing.JFrame {
         // TODO add your handling code here:
         frmMostarPacientes p = new frmMostarPacientes();
         p.setVisible(true);
+        p.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnPacientesActionPerformed
 
