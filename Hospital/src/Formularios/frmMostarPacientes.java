@@ -1,5 +1,6 @@
 package Formularios;
 
+
 import java.awt.Image;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -15,19 +16,25 @@ public class frmMostarPacientes extends javax.swing.JFrame {
     Guardar pacientGuardar;
     DefaultListModel modeloLista;
 
-    private ImageIcon imagen;
+   private ImageIcon imagen;
     private Icon icono;
 
     public frmMostarPacientes() {
 
-        /* this.setLocationRelativeTo(this);
-        this.pintarImagen(this.lblImagen1, "src/Formularios/icon23.jpg");*/
+    
+        
         initComponents();
+         this.setLocationRelativeTo(this);
+        this.pintarImagen(this.lblpanel4, "src/imagenes/part5.jpg");
+        this.pintarImagen(this.lblImagenCH, "src/imagenes/iconoHospital.png");
+
+        
         pacientGuardar = new Guardar();
         pacientGuardar.cargarDesdeArchivo("datos.dat");
         modeloLista = new DefaultListModel();
         lstListaPacientes.setModel(modeloLista);
         mostrarPacientesEnLista();
+        
     }
 
     private void mostrarPacientesEnLista() {
@@ -60,7 +67,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         lstListaPacientes = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelTitulo = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         btnAgregar = new javax.swing.JButton();
@@ -69,6 +76,8 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         btnOrdenar = new javax.swing.JButton();
         btnOrdenarNombre = new javax.swing.JButton();
+        lblpanel4 = new javax.swing.JLabel();
+        lblImagenCH = new javax.swing.JLabel();
 
         popupMenu1.setLabel("popupMenu1");
 
@@ -82,24 +91,24 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(lstListaPacientes);
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel1.setText("Lista de pacientes");
+        jLabelTitulo.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
+        jLabelTitulo.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTitulo.setText("Lista de pacientes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(131, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(105, 105, 105))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabelTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addComponent(jLabelTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 43, Short.MAX_VALUE))
         );
 
         btnEliminar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
@@ -171,45 +180,51 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addContainerGap()
                         .addComponent(btnAgregar)
+                        .addGap(39, 39, 39)
+                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnBuscar)
+                        .addGap(34, 34, 34)
+                        .addComponent(btnOrdenarNombre)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(134, 134, 134))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnOrdenar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 576, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblImagenCH, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnBuscar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOrdenarNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnOrdenar)
-                .addGap(19, 19, 19))
+                .addComponent(lblpanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRegresar))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnRegresar)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblImagenCH, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -222,11 +237,12 @@ public class frmMostarPacientes extends javax.swing.JFrame {
                             .addComponent(btnOrdenarNombre))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEliminar)
                     .addComponent(btnAgregar))
-                .addGap(16, 16, 16))
+                .addGap(10, 10, 10))
+            .addComponent(lblpanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -289,18 +305,20 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         mostrarPacientesEnLista();
     }//GEN-LAST:event_btnOrdenarNombreActionPerformed
 
-    private void pintarImagen(JLabel lbl, String ruta) {
-        this.imagen = new ImageIcon(ruta);
-        this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
-                lbl.getWidth(),
-                lbl.getHeight(),
-                Image.SCALE_DEFAULT
-        )
-        );
-        lbl.setIcon(this.icono);
-        this.repaint();
+  private void pintarImagen(JLabel lbl, String ruta){
+ this.imagen = new ImageIcon(ruta);
+ this.icono = new ImageIcon(this.imagen.getImage().getScaledInstance(
+         lbl.getWidth(), 
+         lbl.getHeight(),
+         Image.SCALE_DEFAULT
+ )
+ );lbl.setIcon(this.icono);
+ this.repaint();
+ 
+}
+  
 
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -309,10 +327,12 @@ public class frmMostarPacientes extends javax.swing.JFrame {
     private javax.swing.JButton btnOrdenar;
     private javax.swing.JButton btnOrdenarNombre;
     private javax.swing.JButton btnRegresar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblImagenCH;
+    private javax.swing.JLabel lblpanel4;
     private javax.swing.JList<String> lstListaPacientes;
     private java.awt.PopupMenu popupMenu1;
     private javax.swing.JTextField txtBuscar;
