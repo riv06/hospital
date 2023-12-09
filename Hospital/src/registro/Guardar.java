@@ -67,7 +67,7 @@ public class Guardar implements Serializable {
             for (int tem : darHabitacion) {
                 a += tem;
             }
-            return n + " en habitacion " + a;
+            return n + " ir a consultorio: " + a;
         } else {
             return "Ocurrio un error";
         }
@@ -129,5 +129,16 @@ public class Guardar implements Serializable {
 
     public List<Paciente> obtenerListaPacientes() {
         return guardar;
+    }
+
+    public String getNombre(int i) {
+        if (i >= guardar.size()) {
+
+            return getNombre(i + 1);
+        } else {
+            Paciente P = guardar.get(i);
+            String nombre = P.getNombre();
+            return nombre;
+        }
     }
 }
