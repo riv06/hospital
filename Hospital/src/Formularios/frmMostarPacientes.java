@@ -92,7 +92,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(lstListaPacientes);
 
         jLabelTitulo.setFont(new java.awt.Font("Roboto", 1, 20)); // NOI18N
-        jLabelTitulo.setForeground(new java.awt.Color(0, 153, 153));
+        jLabelTitulo.setForeground(new java.awt.Color(0, 102, 204));
         jLabelTitulo.setText("Lista de pacientes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -142,7 +142,7 @@ public class frmMostarPacientes extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setText("Buscar:");
 
         btnBuscar.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N

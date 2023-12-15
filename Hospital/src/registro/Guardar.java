@@ -82,7 +82,7 @@ public class Guardar implements Serializable {
 
         if (paciente.Nombre.equals(nombre)) {
             int tem = index + 1;
-            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + tem + "º en ser registrado",
+            JOptionPane.showMessageDialog(null, "Paciente " + nombre + " fue " + tem + "º en ser registrado\n"+ paciente.toString(),
                     "Atencion", JOptionPane.INFORMATION_MESSAGE);
             return true;
         } else {

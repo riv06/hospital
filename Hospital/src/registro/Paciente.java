@@ -9,6 +9,7 @@ public class Paciente implements Serializable{
     private int Edad;
     private String Padecimiento;
     private String Observaciones;
+    private String Especialidad;
 
     public String getNombre() {
         return Nombre;
@@ -42,17 +43,28 @@ public class Paciente implements Serializable{
         this.Observaciones = Observaciones;
     }
 
+    public String getEspecialidad() {
+        return Especialidad;
+    }
+
+    public void setEspecialidad(String Especialidad) {
+        this.Especialidad = Especialidad;
+    }
+
+    
+    
     public Paciente(String Nombre, int Edad, String Padecimiento, String Observaciones) {
         setNombre(Nombre);
         setEdad(Edad);
         setPadecimiento(Padecimiento);
         setObservaciones(Observaciones );
+        setEspecialidad(Especialidad);
     }
    
 
     @Override
     public String toString() {
-     return "--Nombre: " + Nombre + "--Edad: " + Edad + "--Padecimiento: " + Padecimiento + "--Observaciones: " + Observaciones;
+     return "Nombre: " + Nombre + "     Edad: " + Edad + "     Padecimiento: " + Padecimiento + "     Observaciones: " + Observaciones + "    Especialidad: " + Especialidad;
     }
     
 }

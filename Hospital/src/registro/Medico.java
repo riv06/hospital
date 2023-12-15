@@ -1,7 +1,7 @@
 
 package registro;
 
-public class Medico {
+class Medico {
     private String nombre;
     private String especialidad;
 
@@ -17,5 +17,6 @@ public class Medico {
     public String getEspecialidad() {
         return especialidad;
     }
-
+    
+    
 }
